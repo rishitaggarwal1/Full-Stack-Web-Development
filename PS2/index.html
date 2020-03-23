@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PS2</title></head>
+<body>
+    <script type="text/javascript">
+        fetch('./todos.json').then(function (response){
+            return response.json();
+        }).then(function (data){
+          printp(data)
+        });
+        
+        function printp(data)
+        { 
+          var user=1,comp=0,incomp=0,mini = [],valm="Minimum Task Completed user::   ",vall="Maximum Task Completed user::   ";
+        
+         for(var i=0;i<data.length;i++)
+        {
+            if(data[i]['userId']==user)
+            { if(data[i]['completed'])
+              comp++;
+              else
+              incomp++;
+            }
+            if(i==199)
+            {
+               mini.push(comp);
+               break;
+            }
+
+            if(data[i+1]['userId']==(user+1) )
+           {   mini.push(comp);
+               user++;
+               comp=incomp=0;
+           }
+        }   
+        console.log(mini);
+        
+        var m=Math.min(...mini),l=Math.max(...mini);
+        for(i=0;i<mini.length;i++)
+        {
+            if(mini[i]==m)
+                valm+= " " + (i+1);
+            else if(mini[i]==l)
+                vall+= " "  + (i+1);
+        }
+        
+        document.getElementById("output").innerHTML =  valm + "<br>" + vall;
+           }
+      </script>
+  <div id="output">
+</body>
+</html>
