@@ -28,4 +28,14 @@
 		$id= $_POST["studentid"];
 		header("location:edit_details.php?id=$id");
 	}
+	elseif (isset($_POST["edit_details_submit"])) {
+		$id= $_POST["studentid"];
+		header("location:edit_details.php?id=$id");
+	}
+	elseif (isset($_POST["delete_details_submit"])) {
+		$id=$_POST['id'];
+		$sql="DELETE FROM add_details WHERE id=$id;";
+		$res=mysqli_query($conn, $sql);
+		header("location:index.php?msg=deleted_successfully");
+	}
 ?>
