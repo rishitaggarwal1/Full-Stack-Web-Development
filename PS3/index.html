@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PS3</title>
+</head>
+<body>
+<script type="text/javascript">
+function quesstart(){
+fetch('./post.json')
+  .then(response => response.json())
+  .then(data => check(data))
+}
+function check(data){
+
+ var key=document.getElementById("in").value;
+ if(!key)
+ {
+    alert("Please enter a string then try again");
+     return;
+ }
+ var title,result="";
+ key=RegExp(key,'g');
+// RegExp returns a regular expression and g tells the function to not stop after find one occurence of the key(substring to be searched)
+  for(i=0;i<data.length;i++)
+  {   
+      title=data[i]['title'].concat(" " + data[i]['body']);
+      var val = (title.match(key) || [] ).length ;
+      if(val!=0)
+      {
+        val= data[i]['userId'] + " " + data[i]['id'] + " " + val;
+        result+= val + "<br>";
+      }
+  }
+  document.getElementById("output").innerHTML= "<br>" + result;
+}
+</script>
+</body>
+
+<input type="text" id="in"><br>
+<button type="button" onclick="quesstart()" style="margin:10px 0;">Submit</button>
+<div id="output">
+</div>
+
+</html>
