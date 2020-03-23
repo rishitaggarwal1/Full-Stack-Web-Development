@@ -30,37 +30,37 @@
 			<!-- Enrollment Number -->
 			<div>
 				<label>Enrollment Number</label>
-				<input type="text" name="enroll_id" placeholder="<?php echo $enroll_id; ?>">
+				<input type="text" name="enroll_id" placeholder="<?php echo $enroll_id; ?>" value="<?php echo $enroll_id; ?>">
 			</div>
 			<!-- Name -->
 			<div>
 				<label>Name</label>
-				<input type="text" name="name" placeholder="<?php echo $name; ?>">
+				<input type="text" name="name" placeholder="<?php echo $name; ?>" value="<?php echo $name; ?>">
 			</div>
 			<!-- Age -->
 			<div>
 				<label>Age</label>
-				<input type="number" name="age" placeholder="<?php echo $age; ?>">
+				<input type="number" name="age" placeholder="<?php echo $age; ?>" value="<?php echo $age; ?>">
 			</div>
 			<!-- Course -->
 			<div>
 				<label>Course</label>
-				<input type="text" name="course" placeholder="<?php echo $course; ?>">
+				<input type="text" name="course" placeholder="<?php echo $course; ?>"  value="<?php echo $course; ?>">
 			</div>
 			<!-- Branch -->
 			<div>
 				<label>Branch</label>
-				<input type="text" name="branch" placeholder="<?php echo $branch; ?>">
+				<input type="text" name="branch" placeholder="<?php echo $branch; ?>"  value="<?php echo $branch; ?>">
 			</div>
 			<!-- Contact -->
 			<div>
 				<label>Contact</label>
-				<input type="number" name="contact" placeholder="<?php echo $contact; ?>">
+				<input type="number" name="contact" placeholder="<?php echo $contact; ?>" value="<?php echo $contact; ?>">
 			</div>
 			<!-- Email -->
 			<div>
 				<label>Email</label>
-				<input type="email" name="email" placeholder="<?php echo $email; ?>">
+				<input type="email" name="email" placeholder="<?php echo $email; ?>" value="<?php echo $email; ?>">
 			</div>
 			<div>
 				<button type="submit" name="edit_details_submit">Edit</button>
